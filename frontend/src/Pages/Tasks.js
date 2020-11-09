@@ -49,7 +49,7 @@ class Tasks extends React.Component {
   fetchTasks(){
     console.log('Fetching...')
 
-    fetch('http://127.0.0.1:8000/myapi/task-list/')
+    fetch('https://evening-atoll-03641.herokuapp.com/myapi/task-list/')
     .then(response => response.json())
     .then(data => 
       this.setState({
@@ -78,10 +78,10 @@ class Tasks extends React.Component {
 
     var csrftoken = this.getCookie('csrftoken')
 
-    var url = 'http://127.0.0.1:8000/myapi/task-create/'
+    var url = 'https://evening-atoll-03641.herokuapp.com/myapi/task-create/'
 
     if(this.state.editing === true){
-      url = `http://127.0.0.1:8000/myapi/task-update/${ this.state.activeItem.id}/`
+      url = `https://evening-atoll-03641.herokuapp.com/myapi/task-update/${ this.state.activeItem.id}/`
       this.setState({
         editing:false
       })
@@ -122,7 +122,7 @@ class Tasks extends React.Component {
   deleteItem(task){
     var csrftoken = this.getCookie('csrftoken')
 
-    fetch(`http://127.0.0.1:8000/myapi/task-delete/${task.id}/`, {
+    fetch(`https://evening-atoll-03641.herokuapp.com/myapi/task-delete/${task.id}/`, {
       method:'DELETE',
       headers:{
         'Content-type':'application/json',
@@ -139,7 +139,7 @@ class Tasks extends React.Component {
 
     task.completed = !task.completed
     var csrftoken = this.getCookie('csrftoken')
-    var url = `http://127.0.0.1:8000/myapi/task-update/${task.id}/`
+    var url = `https://evening-atoll-03641.herokuapp.com/myapi/task-update/${task.id}/`
 
       fetch(url, {
         method:'POST',
