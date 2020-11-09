@@ -25,7 +25,7 @@ SECRET_KEY = 'fohcs@og!u0k^@bsqph&fl8pf80a1jeg7e1zlu)kauoc^=f$%i'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://evening-atoll-03641.herokuapp.com/','127.0.0.1']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -81,6 +81,8 @@ CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
     "http://localhost:8000",
     "http://semsaintaubin.com",
+    "https://evening-atoll-03641.herokuapp.com/",
+    "127.0.0.1",
 ]
 
 
