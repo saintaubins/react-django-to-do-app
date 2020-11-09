@@ -58,6 +58,5 @@ wcwidth==0.1.7
 Werkzeug==1.0.1
 whitenoise==5.2.0
 wrapt==1.11.2
-django>=2.1.2
 gunicorn==19.7.1
 whitenoise==3.3.1
