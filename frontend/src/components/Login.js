@@ -17,17 +17,7 @@ class Login extends Component {
         .then( data => this.props.userLogin(data.token))
         .catch(error => console.error(error))
     }
-    // register = event => {
-    //     console.log(this.state.credentials);
-    //     fetch('http://127.0.0.1:8000/myapi/users/', {
-    //         method: 'POST',
-    //         headers: {'Content-Type': 'application/json'},
-    //         body: JSON.stringify(this.state.credentials)
-    //     })
-    //     .then( data => data.json())
-    //     .then( data => {console.log(data.token);})
-    //     .catch(error => console.error(error))
-    // }
+    
 
     inputChanged = event => {
         const cred = this.state.credentials;
