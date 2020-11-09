@@ -25,7 +25,7 @@ SECRET_KEY = 'fohcs@og!u0k^@bsqph&fl8pf80a1jeg7e1zlu)kauoc^=f$%i'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['evening-atoll-03641.herokuapp.com','http://127.0.0.1','http://dpaste.com',]
+ALLOWED_HOSTS = ['evening-atoll-03641.herokuapp.com','localhost','http://dpaste.com',]
 
 
 # Application definition
