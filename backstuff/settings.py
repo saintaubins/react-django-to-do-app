@@ -81,8 +81,8 @@ CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
     "http://localhost:8000",
     "http://semsaintaubin.com",
-    "https://evening-atoll-03641.herokuapp.com/",
-    "127.0.0.1",
+    "https://evening-atoll-03641.herokuapp.com",
+    "http://127.0.0.1",
 ]
 
 
@@ -91,10 +91,15 @@ CORS_ORIGIN_WHITELIST = [
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'daev9e36a0nf78',
+        'HOST': 'ec2-54-86-170-8.compute-1.amazonaws.com',
+        'PORT': '5432',
+        'USER': 'inyxeeeiojzyes',
+        'PASSWORD': '044022fb7bcf069407c106a942498c3d9c67e5247363404dd54246f533290a2c',
     }
 }
+
 
 # adding heroku
 # Password validation
