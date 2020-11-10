@@ -161,7 +161,6 @@ class Tasks extends React.Component {
     var self = this
     return(
         <div className="container">
-
           <div id="task-container">
               <div  id="form-wrapper">
                  <form onSubmit={this.handleSubmit}  id="form">
@@ -175,9 +174,7 @@ class Tasks extends React.Component {
                           </div>
                       </div>
                 </form>
-             
               </div>
-
               <div  id="list-wrapper">         
                     {tasks.map(function(task, index){
                       return(
