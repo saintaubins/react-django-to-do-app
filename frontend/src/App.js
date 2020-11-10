@@ -180,8 +180,8 @@ const App = () => {
           <Route path="/tasks" component={Tasks} />
           <Route path="/books" render={() => <Books token={token} />} />
           <Route path="/heros" render={() => <Heros token={token} />} />
-          <Route exact path="/login" render={() => <Login userLogin={userLogin} />} />
-          <Route exact path="/register" render={() => <Register userLogin={userLogin} />} />
+          <Route exact path="/login" render={() => <Login userLogin={userLogin} token={token}/>} />
+          <Route exact path="/register" render={() => <Register userLogin={userLogin} token={token}/>} />
           <Route path="/bugs" render={() => <Bugs addBug={addBug} />} />
           <Route path="*" component={NoMatchPage} />
       </Switch>

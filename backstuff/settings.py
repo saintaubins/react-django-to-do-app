@@ -84,7 +84,6 @@ CORS_ORIGIN_WHITELIST = [
     "http://semsaintaubin.com",
     "https://evening-atoll-03641.herokuapp.com",
     "http://127.0.0.1",
-    "http://dpaste.com",
 ]
 
 

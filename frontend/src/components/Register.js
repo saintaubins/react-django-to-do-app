@@ -6,14 +6,15 @@ class Register extends Component {
         credentials: {username: '', password: ''}
     }
     register = event => {
-        console.log(this.state.credentials);
+        console.log('this.props:',this.props);
+        console.log('this.state.credentials:',this.state.credentials);
         fetch('https://evening-atoll-03641.herokuapp.com/myapi/users/', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(this.state.credentials)
         })
         .then( data => data.json())
-        .then( data => {console.log(data.token);})
+        .then( data => {console.log(data);})
         .then(() => alert('Successfully Registered, Please Login'))
         .catch(error => console.error(error))
     }

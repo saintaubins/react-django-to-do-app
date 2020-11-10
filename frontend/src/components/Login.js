@@ -7,6 +7,7 @@ class Login extends Component {
     }
     
     login = event => {
+        console.log('this.props:',this.props);
         console.log(this.state.credentials);
         fetch('https://evening-atoll-03641.herokuapp.com/auth/', {
             method: 'POST',
