@@ -8,7 +8,7 @@ class Heros extends Component {
 
     loadHeros = () => {
         console.log(this.state.credentials);
-        fetch('http://127.0.0.1:8000/myapi/heros/', {
+        fetch('https://evening-atoll-03641.herokuapp.com/myapi/heros/', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

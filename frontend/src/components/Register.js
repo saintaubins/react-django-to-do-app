@@ -7,7 +7,7 @@ class Register extends Component {
     }
     register = event => {
         console.log(this.state.credentials);
-        fetch('http://127.0.0.1:8000/myapi/users/', {
+        fetch('https://evening-atoll-03641.herokuapp.com/myapi/users/', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(this.state.credentials)

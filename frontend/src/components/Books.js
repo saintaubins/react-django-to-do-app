@@ -8,7 +8,7 @@ class Books extends Component {
 
     loadBooks = () => {
         console.log(this.state.credentials);
-        fetch('http://127.0.0.1:8000/myapi/books/', {
+        fetch('https://evening-atoll-03641.herokuapp.com/myapi/books/', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
