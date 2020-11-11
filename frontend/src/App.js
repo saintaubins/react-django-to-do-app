@@ -154,6 +154,7 @@ const App = () => {
       </>
     )
   }
+  console.log('token = ',token)
   return (<>
     <Router>
         <nav style={{ 
