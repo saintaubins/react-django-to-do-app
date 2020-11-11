@@ -24,14 +24,18 @@ class Books extends Component {
         return (
             this.props.token ?
                 <div>
-                <h1>Books Page</h1>
-                { this.state.books.map( book => {
-                    return <h3 key={book.id}>{book.title}</h3>
-                })}
-                <button onClick={this.loadBooks}>Load Books</button> 
+                    <center>
+                        <h1>Books Page</h1>
+                        { this.state.books.map( book => {
+                            return <h3 key={book.id}>{book.title}</h3>
+                        })}
+                        <button onClick={this.loadBooks}>Load Books</button> 
+                    </center>
                 </div>
             :
-                <div><h1>Please Login if you don't have an Account Please Reigister!</h1></div>
+            <center>
+                <div><h1>Please Login, if you don't have an Account Please Reigister!</h1></div>
+            </center>
         )
 
     }

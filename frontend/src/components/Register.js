@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
 class Register extends Component {
 
@@ -25,6 +26,7 @@ class Register extends Component {
     register = event => {
         event.preventDefault()
         var csrftoken = this.getCookie('csrftoken')
+        const { history } = this.props
         console.log('csrftoken:', csrftoken)
         console.log('this.state.credentials:',this.state.credentials);
         fetch('https://evening-atoll-03641.herokuapp.com/myapi/users/', {
@@ -37,8 +39,8 @@ class Register extends Component {
         })
         .then( data => data.json())
         .then( data => {console.log(data);})
-        .then(() => alert('Successfully Registered, Please Login'))
         .catch(error => console.error(error))
+        if(history) history.push('/login')
     }
 
     inputChanged = event => {
@@ -49,34 +51,36 @@ class Register extends Component {
 
     render() {
         return (
-            <div>
-               <h1>Register User Form</h1> 
-               <label>
-                   Username:
-                   <input 
-                    type="text" 
-                    name="username" 
-                    value={this.state.credentials.username}
-                    onChange={this.inputChanged} 
-                    />
-               </label>
-               <br />
-               <label>
-                   Password:
-                   <input 
-                    type="password" 
-                    name="password"
-                    value={this.state.credentials.password}
-                    onChange={this.inputChanged}  
-                   />
-               </label>
-               <br />
-               <button onClick={this.register}>Register</button>
-            </div>
+            <center>
+                <div>
+                <h1>Please Register!</h1> 
+                <label>
+                    Username:
+                    <input 
+                        type="text" 
+                        name="username" 
+                        value={this.state.credentials.username}
+                        onChange={this.inputChanged} 
+                        />
+                </label>
+                <br />
+                <label>
+                    Password:
+                    <input 
+                        type="password" 
+                        name="password"
+                        value={this.state.credentials.password}
+                        onChange={this.inputChanged}  
+                        />
+                </label>
+                <br />
+                <button onClick={this.register}>Register</button>
+                </div>
+            </center>
         )
 
     }
     
 }
 
-export default Register
+export default withRouter(Register);

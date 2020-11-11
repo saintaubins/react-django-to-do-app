@@ -23,15 +23,19 @@ class Heros extends Component {
     render() {
         return (
             this.props.token ?
-                <div>
-                <h1>Heros Page</h1>
-                { this.state.heros.map( hero => {
-                    return <h3 key={hero.id}>{hero.name}</h3>
-                })}
-                <button onClick={this.loadHeros}>Load Heros</button> 
-                </div>
+                <center>
+                    <div>
+                    <h1>Heros Page</h1>
+                    { this.state.heros.map( hero => {
+                        return <h3 key={hero.id}>{hero.name}</h3>
+                    })}
+                    <button onClick={this.loadHeros}>Load Heros</button> 
+                    </div>
+                </center>
             :
-                <div><h1>Please Login if you don't have an Account Please Reigister!</h1></div>
+                <center>
+                    <div><h1>Please Login if you don't have an Account Please Reigister!</h1></div>
+                </center>
         )
 
     }

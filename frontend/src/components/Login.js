@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+
+
 
 class Login extends Component {
 
@@ -25,6 +28,8 @@ class Login extends Component {
     login = event => {
         event.preventDefault()
         var csrftoken = this.getCookie('csrftoken')
+        const { history } = this.props
+        
         console.log('csrftoken:',csrftoken);
         console.log(this.state.credentials);
         fetch('https://evening-atoll-03641.herokuapp.com/auth/', {
@@ -38,6 +43,8 @@ class Login extends Component {
         .then( data => data.json())
         .then( data => this.props.userLogin(data.token))
         .catch(error => console.error(error))
+        console.log('props = ',this.props)
+        if(history) history.push('/')
     }
     
 
@@ -49,35 +56,36 @@ class Login extends Component {
 
     render() {
         return (
-            <div>
-               <h1>Login User Form</h1> 
-               <label>
-                   Username:
-                   <input 
-                    type="text" 
-                    name="username" 
-                    value={this.state.credentials.username}
-                    onChange={this.inputChanged} 
-                    />
-               </label>
-               <br />
-               <label>
-                   Password:
-                   <input 
-                    type="password" 
-                    name="password"
-                    value={this.state.credentials.password}
-                    onChange={this.inputChanged}  
-                   />
-               </label>
-               <br />
-               <button onClick={this.login}>Login</button>
-               {/* <button onClick={this.register}>Register</button> */}
-            </div>
+            <center>
+                <div>
+                <h1>Please Login!</h1> 
+                <label>
+                    Username:
+                    <input 
+                        type="text" 
+                        name="username" 
+                        value={this.state.credentials.username}
+                        onChange={this.inputChanged} 
+                        />
+                </label>
+                <br />
+                <label>
+                    Password:
+                    <input 
+                        type="password" 
+                        name="password"
+                        value={this.state.credentials.password}
+                        onChange={this.inputChanged}  
+                        />
+                </label>
+                <br />
+                <button onClick={this.login}>Login</button>
+                </div>
+            </center>
         )
 
     }
     
 }
 
-export default Login
+export default withRouter(Login);
