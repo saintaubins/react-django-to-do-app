@@ -28,7 +28,7 @@ urlpatterns = [
     path('login/', TemplateView.as_view(template_name='index.html')),
     path('register/', TemplateView.as_view(template_name='index.html')),
     path('bugs/', TemplateView.as_view(template_name='index.html')),
-    path('manifest.json/', TemplateView.as_view(template_name='index.html')),
+    path('manifest.json/', TemplateView.as_view(template_name='manifest.json')),
     path('admin/', admin.site.urls),
     path('myapi/', include('myapi.urls')),
     path('auth/', obtain_auth_token),
