@@ -27,7 +27,7 @@ class Heros extends Component {
                     <div>
                     <h1>Heros Page</h1>
                     { this.state.heros.map( hero => {
-                        return <h3 key={hero.id}>{hero.name}</h3>
+                    return <h3 key={hero.id}>Hero: {hero.name} Alias: {hero.alias}</h3>
                     })}
                     <button onClick={this.loadHeros}>Load Heros</button> 
                     </div>

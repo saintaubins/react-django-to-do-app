@@ -40,7 +40,7 @@ function Bugs() {
 
   const [bugs, setBugs] = useState([
     {
-      text: 'Do mobile update on projects',
+      text: 'Make mobile reactive on projects',
       isCompleted: false
     },
     {
@@ -69,24 +69,25 @@ function Bugs() {
     setBugs(newBugs);
   };
     return(<>
-      <div >
-        <h1>Bugs Component</h1>
-      </div>
-      <div className="app">
-      <div className="bug-list">
-        {bugs.map((bug, index) => (
-          <Bug
-          key={index} 
-          index={index} 
-          bug={bug} 
-          completeBug={completeBug}
-          deleteBug={deleteBug}
-          />
-          ))}
-        
-        <BugForm addBug={addBug} />
-      </div>
-    </div>
+        <center>
+          <div >
+            <h1>Bugs Component</h1>
+            </div>
+              <div className="app">
+              <div className="bug-list">
+                {bugs.map((bug, index) => (
+                  <Bug
+                  key={index} 
+                  index={index} 
+                  bug={bug} 
+                  completeBug={completeBug}
+                  deleteBug={deleteBug}
+                  />
+                  ))}
+                <BugForm addBug={addBug} />
+            </div>
+        </div>
+      </center>
     </>
   )
 }

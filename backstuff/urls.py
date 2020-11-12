@@ -21,9 +21,16 @@ from django.views.generic import TemplateView
 from myapi import views
 
 urlpatterns = [
+    path('', TemplateView.as_view(template_name='index.html')),
+    path('tasks/', TemplateView.as_view(template_name='index.html')),
+    path('heros/', TemplateView.as_view(template_name='index.html')),
+    path('books/', TemplateView.as_view(template_name='index.html')),
+    path('login/', TemplateView.as_view(template_name='index.html')),
+    path('register/', TemplateView.as_view(template_name='index.html')),
+    path('bugs/', TemplateView.as_view(template_name='index.html')),
+    path('manifest.json/', TemplateView.as_view(template_name='index.html')),
     path('admin/', admin.site.urls),
     path('myapi/', include('myapi.urls')),
     path('auth/', obtain_auth_token),
-    path('', TemplateView.as_view(template_name='index.html')),
-    path('login/',views.login, name ='login'),
+    
 ]

@@ -186,22 +186,6 @@ const App = () => {
           <Route path="/bugs" render={() => <Bugs addBug={addBug} />} />
           <Route path="*" component={NoMatchPage} />
       </Switch>
-     
-        {/* <div className="app">
-          <div className="bug-list">
-            {bugs.map((bug, index) => (
-              <Bug
-              key={index} 
-              index={index} 
-              bug={bug} 
-              completeBug={completeBug}
-              deleteBug={deleteBug}
-              />
-              ))}
-            
-            <BugForm addBug={addBug} />
-          </div>
-        </div> */}
     </Router>
     </>
   )

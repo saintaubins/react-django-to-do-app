@@ -28,9 +28,8 @@ class BookViewSet(viewsets.ModelViewSet):
     authentication_classes = [TokenAuthentication, ]
     permission_classes = [IsAuthenticated, ]
 
-def login(request):
-	return HttpResponse('login')
-#crud starts here
+
+# crud for Tasks component starts here
 
 @api_view(['GET'])
 def apiOverview(request):
