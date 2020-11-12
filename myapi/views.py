@@ -2,6 +2,7 @@ from rest_framework import viewsets
 
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
+from django.http import HttpResponse
 
 from django.contrib.auth.models import User
 from .models import Hero, Book, Task
@@ -27,6 +28,8 @@ class BookViewSet(viewsets.ModelViewSet):
     authentication_classes = [TokenAuthentication, ]
     permission_classes = [IsAuthenticated, ]
 
+def login(request):
+	return HttpResponse('login')
 #crud starts here
 
 @api_view(['GET'])
